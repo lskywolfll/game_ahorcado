@@ -65,8 +65,7 @@ def game(objetive):
     print("=====================================")
 
 def run():
-    print("")
-    # game("papá")
+    game(phrase())
 
 if __name__ == '__main__':
     run()

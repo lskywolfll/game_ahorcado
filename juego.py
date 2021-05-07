@@ -1,7 +1,14 @@
+
 import os
 import random
+import unidecode
+# import unicodedata
 
 content = []
+
+# def remove_accents(input_str):
+#     nfkd_form = unicodedata.normalize("NFKD", input_str)
+#     return u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
 
 def phrase():
     with open("./archivos/data.txt", "r") as f:
@@ -51,7 +58,7 @@ def validate_character(new_character, objetive):
 def game(objetive):
     myList_words = []
     for character in objetive:
-        myList_words.append(character)
+        myList_words.append(unidecode.unidecode(character))
         actual_words.append("")
 
     while actual_words != myList_words:
